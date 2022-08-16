@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <base href="/" />
+    <link type="text/css" rel="stylesheet" href="./styles/myStyle.css" />
+    <title>Blog</title>
+  </head>
+  <body>
+    <%- include('_header') %>
+    <div class="container">
+      <h1 class="mb-4">Markdown Blog</h1>
+      <a href="/articles/new" class="btn btn-success" role="button"
+        >New Article</a
+      >
+      <a href="/?rev=1" class="btn btn-info" role="button"
+        ><i class="fa fa-sort"></i
+      ></a>
+      <% articles.forEach(article => { %>
+      <div class="card mt-4 p-4">
+        <div class="class-body">
+          <a href="articles/<%= article.link %>" class="card-title my-link"
+            ><h4><%= article.title %></h4></a
+          >
+          <div class="card-subtitle text-muted mb-2">
+            <%= article.createdAt.toLocaleDateString() %>
+          </div>
+          <div class="card-text mb-2"><%= article.description %></div>
+          <a href="articles/edit/<%= article.id %>" class="btn btn-info"
+            ><i class="fa fa-edit"></i
+          ></a>
+          <form
+            action="/articles/<%= article.id %>?_method=DELETE"
+            method="POST"
+            class="d-inline"
+          >
+            <button type="submit" class="btn btn-danger">
+              <i class="fa fa-trash"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+    <%- include('_footer') %>
+  </body>
+</html>

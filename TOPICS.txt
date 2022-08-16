@@ -1,0 +1,16 @@
+- How to create an Express server
+- Connecting MongoDB with Express
+- The structure of a full stack application
+- How to setup database hooks
+
+###
+
+dependencies": {
+    "dompurify": "^2.3.10",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "jsdom": "^20.0.0",
+    "marked": "^4.0.18",
+    "method-override": "^3.0.0",
+    "mongoose": "^6.5.2",
+    "slugify": "^1.6.5"

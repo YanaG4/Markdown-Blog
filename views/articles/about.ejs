@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <base href="/" />
+    <link type="text/css" rel="stylesheet" href="./styles/myStyle.css" />
+    <title>New Article</title>
+  </head>
+  <body>
+    <%- include('_header') %>
+    <div class="container">
+        <h1 class="mb-4">About</h1>
+        <div class="card mt-4 p-4">
+      
+      <p>Hello! 
+        I'm a programmer and this is my project: a simple blog with markdown, database and server hosting.
+        <br>
+        It was made for studing purpose only.
+        <br>
+        In this project I used:
+        <ul>
+            <li>JavaScript</li>
+            <li>Express JS</li>
+            <li>Mongo DB</li>
+            <li>EJS</li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>Bootstrap</li>
+        </ul>
+        Thanks for visiting my blog!
+      </p>
+    </div>
+    </div>
+    <%- include('_footer') %>
+  </body>
+</html>
