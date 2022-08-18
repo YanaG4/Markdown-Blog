@@ -14,8 +14,18 @@ app.use(methodOverride('_method'))
 app.use(express.static('public'))
 
 app.get('/', async (req, res) => {
-    const articles = await Article.find().sort({ createdAt: 'desc' })
-    res.render('articles/index', { articles })
+    const sort = req.query.rev || 0
+    let path
+    let articles
+    if (sort == 0) {
+        articles = await Article.find().sort({ createdAt: 'desc' })
+        path = '/?rev=1'
+    }
+    else {
+        articles = await Article.find()
+        path = '/'
+    }
+    res.render('articles/index', { articles, path })
 })
 
 app.get('/about', (req, res) => {

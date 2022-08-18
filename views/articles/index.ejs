@@ -14,6 +14,13 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+
+    <link
+      href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+
     <base href="/" />
     <link type="text/css" rel="stylesheet" href="./styles/myStyle.css" />
     <title>Blog</title>
@@ -21,11 +28,11 @@
   <body>
     <%- include('_header') %>
     <div class="container">
-      <h1 class="mb-4">Markdown Blog</h1>
+      <h1 class="mt-2 mb-4">Markdown Blog</h1>
       <a href="/articles/new" class="btn btn-success" role="button"
-        >New Article</a
+        ><i class="fa fa-plus"></i> New Article</a
       >
-      <a href="/?rev=1" class="btn btn-info" role="button"
+      <a href="<%= path %>" class="btn btn-info" id="sortButton" role="button"
         ><i class="fa fa-sort"></i
       ></a>
       <% articles.forEach(article => { %>
@@ -54,6 +61,33 @@
       </div>
       <% }) %>
     </div>
+    <a href="/articles/new" class="float btn-success">
+      <i class="fa fa-plus my-float"></i>
+    </a>
     <%- include('_footer') %>
   </body>
+  <script>
+    // const sortButton = document.getElementById("sortButton");
+    // function MyFunction() {
+    //   sortButton.classList.toggle("rev");
+    //   if (sortButton.classList.contains("rev")) {
+    //     sortButton.setAttribute("href", "/?rev=1");
+    //   } else {
+    //     sortButton.setAttribute("href", "/");
+    //   }
+    //   alert(sortButton.classList.contains("rev"));
+    //   console.log(sortButton.classList.contains("rev"));
+    // }
+
+    // sortButton.addEventListener("click", (e) => {
+    //   sortButton.classList.toggle("rev");
+    //   if (sortButton.classList.contains("rev")) {
+    //     sortButton.setAttribute("href", "/?rev=1");
+    //   } else {
+    //     sortButton.setAttribute("href", "/");
+    //   }
+    //   console.log(sortButton.classList.entries);
+    //   console.log(sortButton.classList.contains("rev"));
+    // });
+  </script>
 </html>

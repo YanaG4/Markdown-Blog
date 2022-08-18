@@ -10,6 +10,10 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <base href="/" />
     <link type="text/css" rel="stylesheet" href="./styles/myStyle.css" />
     <title>Edit Article</title>
@@ -17,10 +21,36 @@
   <body>
     <%- include('_header') %>
     <div class="container">
-      <h1 class="mb-4">Edit Article</h1>
+      <h1 class="mt-2 mb-4" id="edit">Edit Article</h1>
 
       <form action="/articles/<%= article.id %>?_method=PUT" method="POST">
         <%- include('_articleForm') %>
+        <a href="/" class="btn btn-secondary">Cancel</a>
+        <button
+          type="submit"
+          class="btn btn-primary"
+          name="action"
+          value="save"
+        >
+          Save
+        </button>
+        <button
+          type="submit"
+          class="btn btn-info"
+          name="action"
+          value="preview"
+        >
+          Preview
+        </button>
+        <form
+          action="/articles/<%= article.id %>?_method=DELETE"
+          method="POST"
+          class="d-inline"
+        >
+          <button type="submit" class="btn btn-danger">
+            <i class="fa fa-trash"></i>
+          </button>
+        </form>
       </form>
     </div>
     <%- include('_footer') %>

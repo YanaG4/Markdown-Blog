@@ -25,20 +25,24 @@
       <div class="text-muted mb-2">
         <%= article.createdAt.toLocaleDateString() %>
       </div>
-      <a href="/" class="btn btn-secondary">All Articles</a>
-      <a href="/articles/edit/<%= article.id %>" class="btn btn-info"
+      <a href="/" class="btn btn-secondary disabled">All Articles</a>
+      <a href="/articles/edit/<%= article.id %>" class="btn btn-info disabled"
         ><i class="fa fa-edit"></i
       ></a>
       <form
         action="/articles/<%= article.id %>?_method=DELETE"
         method="POST"
-        class="d-inline"
+        class="d-inline disabled"
       >
         <button type="submit" class="btn btn-danger">
           <i class="fa fa-trash"></i>
         </button>
       </form>
       <div class="card mt-4 p-4"><%- article.sanitizedText %></div>
+      <a href="/" class="btn btn-secondary"><i class="fa fa-edit"></i>Edit</a>
+      <button type="submit" class="btn btn-primary" name="action" value="save">
+        Save
+      </button>
     </div>
     <%- include('_footer') %>
   </body>

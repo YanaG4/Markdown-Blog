@@ -38,7 +38,7 @@ a.my-link:hover {
 .btn-primary {
     background-color:rgb(88, 180, 188)
 }
-.btn-success {
+.btn-success, .btn-success:not(:disabled):not(.disabled):active {
     background-color:rgb(221, 136, 66)
 }
 .btn-success:hover {
@@ -59,3 +59,116 @@ a.my-link:hover {
 .container {
     flex: 1
 }
+.btn .disabled{
+    opacity: 50%;
+    cursor:not-allowed
+}
+
+.my-header-link {
+    color: black;
+}
+.my-header-link:hover, .my-header-link:focus {
+    color: black;
+    background-color: #cad8e4;
+    border-radius: 10%;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 22px;
+  }
+  
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 15px;
+    width: 15px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #031d32;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px rgb(190, 108, 42);
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(35px);
+    -ms-transform: translateX(35px);
+    transform: translateX(35px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+
+  .float {
+    position:sticky;
+    width:60px;
+    height:60px;
+    bottom:40px;
+    left: 100%;
+    margin-right: 20px;
+    background-color:rgb(221, 136, 66);
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+    box-shadow: 2px 2px 3px #999;
+  }
+  
+  .my-float {
+    margin-top:22px;
+  }
+  /* .navbar {
+    padding-left: 3px;
+    padding-right: 2px;
+  } */
+  .my-container-header {
+    max-height: 65px;
+  }
+
+  @media only screen and (min-width: 1200px) {
+    .float {
+      margin-right: 7vw;
+    }
+    /* .navbar {
+      padding-right: 7vw;
+      padding-left: 7vw;
+    }
+    .nav-link{
+      margin-left: 7px;
+      margin-right: 7px;
+    } */
+  }
